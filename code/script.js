@@ -1,4 +1,7 @@
-
+const daysEl = document.querySelector('#days')
+const hoursEl = document.querySelector('#hours')
+const minutesEl = document.querySelector('#minutes')
+const secondsEl = document.querySelector('#seconds')
 
 const yearsFormat = '1 Jan 2023'
 
@@ -15,7 +18,12 @@ function countdown() {
    const minutes = Math.floor(remainingTime / 60) % 60
    const seconds = Math.floor(remainingTime) % 60
 
-   console.log(days, hours, minutes, seconds)
+   daysEl.innerHTML = days
+   hoursEl.innerHTML = hours
+   minutesEl.innerHTML = minutes
+   secondsEl.innerHTML = seconds
 }
 
 countdown()
+
+setInterval(countdown, 1000)
